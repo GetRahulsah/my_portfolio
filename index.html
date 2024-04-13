@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+
+    <!-- Navbar Start -->
+    <nav class="bg-gray-800">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button
+              type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+              <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+              <svg
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+          >
+            <div class="flex flex-shrink-0 items-center">
+              <img
+                class="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Your Company"
+              />
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a
+                  href="#"
+                  class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                  aria-current="page"
+                  >Home</a
+                >
+                <a href="#" id="about-link" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
+
+             <a href="#" id="projects-link" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
+<a href="#" id="skills-link" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Skills</a>
+<a href="#" id="contact-link" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+
+              </div>
+            </div>
+          </div>
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+
+
+            <!-- Profile dropdown -->
+            <div class="relative ml-3">
+              <div>
+                <button
+                  type="button"
+                  class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  id="user-menu-button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  <span class="absolute -inset-1.5"></span>
+                  <span class="sr-only">Open user menu</span>
+                  <img
+                    class="h-8 w-8 rounded-full"
+                    src="/assets/images/Profile.jpg"
+                    alt=""
+                  />
+                </button>
+              </div>
+
+              <!--
+                  Dropdown menu, show/hide based on menu state.
+      
+                  Entering: "transition ease-out duration-100"
+                    From: "transform opacity-0 scale-95"
+                    To: "transform opacity-100 scale-100"
+                  Leaving: "transition ease-in duration-75"
+                    From: "transform opacity-100 scale-100"
+                    To: "transform opacity-0 scale-95"
+                -->
+              <!-- <div
+                class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="user-menu-button"
+                tabindex="-1"
+              >
+          
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="user-menu-item-0"
+                  >Your Profile</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="user-menu-item-1"
+                  >Settings</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="user-menu-item-2"
+                  >Sign out</a
+                >
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          <a
+                  href="#"
+                  class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                  aria-current="page"
+                  >Home</a
+                >
+                <a href="#" id="about-link" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
+
+             <a href="#" id="projects-link" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
+<a href="#" id="skills-link" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Skills</a>
+<a href="#" id="contact-link" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+        </div>
+      </div>
+    </nav>
+<!-- Navbar End -->
+
+  <!-- Content section -->
+  <div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="bg-gray-100 p-16">
+      <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-5xl font-bold text-gray-800 mb-4">Hello, my name is</h1>
+        <h2 class="text-4xl font-semibold text-blue-600 mb-6">Rahul Kumar Sah</h2>
+        <p class="text-lg text-gray-700 mb-8">I'm a <span class="typed"
+            data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
+        <!-- Hire Me button -->
+        <button onclick="openEmail()"
+          class="bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl py-3 px-6 rounded-full transition duration-300 ease-in-out">Hire
+          Me</button>
+      </div>
+    </div>
+  </div>
+  <!-- Content section end -->
+
+
+  <!-- About Section -->
+  <div class="bg-gray-100 py-12" id="about">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-center">
+      <!-- Image -->
+      <div class="md:w-1/3 mb-6 md:mb-0">
+        <img src="/assets/images/Profile.jpg" alt="Profile Picture" class="rounded-full h-48 w-48 object-cover mx-auto md:mx-0">
+      </div>
+      <!-- Description -->
+      <div class="md:w-2/3 md:ml-10">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">About Me</h2>
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed text-justify">
+          I'm Rahul Kumar Sah, and I'm a student. Specializing in creating robust web applications, I am a Django backend developer with a keen interest in programming. I completed my internship focusing on honing my skills in Django development. Currently pursuing BCS.IT at Sunway College, I immerse myself in the intricacies of information technology. Through my studies and practical experience, I aim to excel in crafting innovative solutions within the Django framework, leveraging my passion for coding to build efficient and scalable applications.
+        </p>
+
+        <!-- Download CV Button -->
+        <div class="text-center mt-8">
+          <a href="assets/LAXMAN-SHARMA-cv.pdf" download="Laxman_Sharma_CV.pdf"
+            class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Download
+            CV</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- About Section End -->
+
+
+  <!-- Skills section start -->
+  <section class="bg-gray-100 py-12 flex justify-center" id="skills">
+    <div class="max-w-6xl w-full px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">My Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Left side: Creative skills & experiences -->
+        <div class="md:text-xl md:font-semibold md:text-gray-700 md:mr-7">
+          <h3 class="text-3xl font-bold text-gray-800 mb-4">My creative skills & experiences</h3>
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed text-justify">I am a skilled Django backend developer
+            proficient in HTML, CSS, MySQL, and JavaScript. My expertise lies in creating dynamic user interfaces and
+            robust backend solutions, evident in my successful development of a social media website project. With a
+            creative problem-solving approach, I continuously strive to deliver innovative solutions, whether it's
+            enhancing user experiences or optimizing database performance. My journey in web development has equipped me
+            to efficiently navigate project intricacies, ensuring that each endeavor meets superior standards of
+            functionality and design.</p>
+        </div>
+        <!-- Right side: Skill ratings -->
+        <div>
+          <div class="md:ml-4">
+            <div class="mb-8">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold">Django</span>
+                <span class="font-semibold">70%</span>
+              </div>
+              <div class="relative h-4 bg-gray-300 rounded-full">
+                <div class="absolute left-0 top-0 h-full bg-blue-500 rounded-full" style="width: 70%;"></div>
+              </div>
+            </div>
+            <div class="mb-8">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold">CSS</span>
+                <span class="font-semibold">50%</span>
+              </div>
+              <div class="relative h-4 bg-gray-300 rounded-full">
+                <div class="absolute left-0 top-0 h-full bg-blue-500 rounded-full" style="width: 50%;"></div>
+              </div>
+            </div>
+            <div class="mb-8">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold">HTML</span>
+                <span class="font-semibold">60%</span>
+              </div>
+              <div class="relative h-4 bg-gray-300 rounded-full">
+                <div class="absolute left-0 top-0 h-full bg-blue-500 rounded-full" style="width: 60%;"></div>
+              </div>
+            </div>
+            <div class="mb-8">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold">JavaScript</span>
+                <span class="font-semibold">40%</span>
+              </div>
+              <div class="relative h-4 bg-gray-300 rounded-full">
+                <div class="absolute left-0 top-0 h-full bg-blue-500 rounded-full" style="width: 40%;"></div>
+              </div>
+            </div>
+            <div class="mb-8">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold">MySQL</span>
+                <span class="font-semibold">50%</span>
+              </div>
+              <div class="relative h-4 bg-gray-300 rounded-full">
+                <div class="absolute left-0 top-0 h-full bg-blue-500 rounded-full" style="width: 50%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Skills section end -->
+
+ <!-- Project section start -->
+<section class="bg-gray-100 py-12" id="projects">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Projects</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+        <img class="w-full h-40 object-cover object-center" src="assets/project2.png" alt="Project 1">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">Social Media</h3>
+          <p class="text-gray-700 leading-relaxed text-justify">Developed a dynamic social media website using Django,
+            incorporating features such as user authentication, profile creation, and post sharing. Designed an
+            intuitive interface for posting, commenting, and liking content, with features for following other users.
+          </p>
+          <a href="https://github.com/laxmansharma1811/Social-Media-Website-Using-Django"
+            class="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">View
+            Project</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+        <img class="w-full h-40 object-cover object-center" src="project2.jpg" alt="Project 2">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">DSA Sorting Project</h3>
+          <p class="text-gray-700 leading-relaxed text-justify">Developed a Django web app implementing Bubble,
+            Selection, and Insertion Sorts for user-input integers, with user authentication and displaying results on
+            a new page.</p>
+          <a href="https://github.com/laxmansharma1811/DSA-Sorting-Project"
+            class="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">View
+            Project</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform transform hover:scale-105">
+        <img class="w-full h-40 object-cover object-center" src="assets/project3.png" alt="Project 3">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">CRUD Operation using Node js</h3>
+          <p class="text-gray-700 leading-relaxed text-justify">Developed a CRUD (Create, Read, Update, Delete)
+            operations project using Node.js, an open-source, server-side JavaScript runtime environment.</p>
+          <a href="https://github.com/laxmansharma1811/CRUD-Operation-Node-js-project"
+            class="inline-block mt-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">View
+            Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Project section end -->
+
+
+
+  <!-- Contact section start -->
+  <section class="bg-gray-100 py-12" id="contact">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Contact Me</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Contact form -->
+        <div>
+          <form class="bg-white rounded-lg shadow-md px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                Name
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="name" type="text" placeholder="Your Name">
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                Email
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="email" type="email" placeholder="Your Email">
+            </div>
+            <div class="mb-6">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="message">
+                Message
+              </label>
+              <textarea
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="message" placeholder="Your Message" rows="6"></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+              <button
+                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact information -->
+        <div>
+          <div class="bg-white rounded-lg shadow-md px-8 py-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Contact Information</h3>
+            <p class="text-gray-700 mb-2">Feel free to get in touch with me via the following methods:</p>
+            <ul class="text-gray-700">
+              <li class="flex items-center mb-2">
+                <svg class="h-5 w-5 mr-2 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 12v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7m-7 7V3"></path>
+                </svg>
+                <span class="font-bold">Email:</span> rahulsah02729@gmail.com
+              </li>
+              <li class="flex items-center mb-2">
+                <svg class="h-5 w-5 mr-2 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 1c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 2a7 7 0 0 1 7 7c0 1.52-.49 2.92-1.32 4.08l5.21 5.21A1 1 0 0 1 18.8 22H5.2a1 1 0 0 1-.71-1.71l5.21-5.21C7.49 15.92 7 14.52 7 13a7 7 0 0 1 7-7z">
+                  </path>
+                </svg>
+                <span class="font-bold">Phone:</span> +977 (9807822579)
+              </li>
+              <li class="flex items-center">
+                <svg class="h-5 w-5 mr-2 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 1c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 16.523 2 11 6.477 1 12 1zm-1 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V6zm1 10v2">
+                  </path>
+                </svg>
+                <span class="font-bold">Address:</span> Lokanthali, Kathmandu, Nepal
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+        <!-- End Contact Information -->
+
+        <!-- Footer Section Start -->
+        <footer class="relative bg-blueGray-200 pt-8 pb-6 mt-6">
+          <div class="container mx-auto px-4">
+            <div class="flex flex-wrap text-left lg:text-left">
+              <div class="w-full lg:w-6/12 px-4">
+                <h4 class="text-3xl fonat-semibold text-blueGray-700">Let's keep in touch!</h4>
+                <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
+                  Find us on any of these platforms, 
+                </h5>
+                <div class="mt-6 lg:mb-0 mb-6">
+                  <button
+                    class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                    type="button">
+                    <i class="fab fa-twitter"></i></button><button
+                    class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                    type="button">
+                    <i class="fab fa-facebook-square"></i></button><button
+                    class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                    type="button">
+                    <i class="fa fa-linkedin"></i></button><button
+                    class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                    type="button">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="w-full lg:w-6/12 px-4">
+                <div class="flex flex-wrap items-top mb-6">
+                  <div class="w-full lg:w-4/12 px-4 ml-auto">
+                    <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Useful Links</span>
+                    <ul class="list-unstyled">
+                      <li>
+                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                          href="#">About Us</a>
+                      </li>
+                     
+                      <li>
+                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                          href="https://github.com/laxmansharma1811/laxmansharma1811">Github</a>
+                      </li>
+                     
+                      <li>
+                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                          href="https://www.linkedin.com/in/laxman-sharma-43969a258/">Linkdedin</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="w-full lg:w-4/12 px-4">
+                    <ul class="list-unstyled">
+                     
+                      <li>
+                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                          href="#">Terms &amp; Conditions</a>
+                      </li>
+                      
+                      <li>
+                        <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                          href="#">Contact Us</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-6 border-blueGray-300">
+            <div class="flex flex-wrap items-center md:justify-between justify-center">
+              <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+                <div class="text-sm text-blueGray-500 font-semibold py-1">
+                  Copyright © <span id="get-current-year">2024</span><a
+                    href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800"
+                    target="_blank"> Laxman Sharma
+                    <a href="https://www.creative-tim.com?ref=njs-profile"
+                      class="text-blueGray-500 hover:text-blueGray-800"></a>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <!-- Footer Section End -->
+
+        <script src="/assets/script.js"></script>
+  </body>
+</html>
